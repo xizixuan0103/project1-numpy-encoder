@@ -1,4 +1,4 @@
-﻿% ============================================================
+% ============================================================
 %  深圳大学实验报告（SZU Experiment Report Template）
 %  基于 Chao Fan / Kewei Ou 的模板修改
 %  编译方式：Overleaf 选择 XeLaTeX
@@ -258,22 +258,19 @@ $0$，后续 tokens、block0 也依次通过。这个 bug 说明：\textbf{形�
 
 \paragraph{局限与改进。}
 当前实现是纯 NumPy、单线程 CPU，10 张图约 6 秒，其中 \texttt{helpers.GELU}
-用逐标量 \texttt{math.erf} 实现，是主要瓶颈；若改成向量化 \texttt{erf}
-可明显加速。浮点误差主要来自矩阵乘法的累加顺序，输出最大误差
-$4.9\times10^{-7}$，余量充足。该编码器可直接作为最终项目
-\texttt{szu\_python\_openclip} 的图像塔，与文本塔组合做图文检索；
+用逐标量 \texttt{math.erf} 实现，是主要瓶颈。浮点误差主要来自矩阵乘法的
+累加顺序，输出最大误差 $4.9\times10^{-7}$，余量充足。该编码器可直接作为
+最终项目 \texttt{szu\_python\_openclip} 的图像塔，与文本塔组合做图文检索；
 但本项目的 152 个张量只是视觉部分，不能替代最终项目的完整多模态
 checkpoint。
 
-\section*{Contributions and Assistance}
-
+\paragraph{贡献与协助。}
 本人完成了 \texttt{image\_encoder.py} 中六个 TODO 的 NumPy 实现、
 12 道 NumPy 练习、逐级数值调试与报告撰写；课程提供了模型权重、
 \texttt{helpers.py}、\texttt{check.py} 及参考输出。开发过程中使用了
 AI 编程助手辅助整理思路、检查 shape 与润色文字，所有结论和数值均在
 本地运行 \texttt{check.py} 复现。代码仓库：
-\url{https://github.com/xizixuan0103/project1-numpy-encoder}
-（提交前请替换为实际地址）。
+\url{https://github.com/xizixuan0103/project1-numpy-encoder}。
 
 \newpage
 

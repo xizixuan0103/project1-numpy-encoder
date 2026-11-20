@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# 课程提供的大文件，禁止上传
+weights/*.npz
+assets/reference_outputs.npz
+
+# 运行产物
+output_tokens.npz
+my_tokens.npz
+*.npz
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# LaTeX 中间文件
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
